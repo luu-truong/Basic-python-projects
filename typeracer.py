@@ -14,6 +14,11 @@ DELAY = 100 # This value determines typing speed
 driver = webdriver.Chrome(PATH)
 driver.get(URL)
 
+# Wait until the start button is clickable
+start_wait = WebDriverWait(driver, 30)
+start_button = start_wait.until(EC.element_to_be_clickable((By.XPATH, "//a[contains(.,'Enter a Typing Race')]")))
+start_button.click()
+
 # * Ace the typing race
 
 
